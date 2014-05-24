@@ -1,0 +1,70 @@
+<div class="col-md-6 col-md-offset-3" ng-controller="SignInController">
+	<!-- PAGE TITLE -->
+	<div class="page-header">
+		<h1><span class="glyphicon glyphicon-book"></span>  Sign into <span class="brand">Project&nbsp;Deafine</span>&trade;</h1>
+		<p>Collecting and standardizing technical terminology for the Deaf</p>
+	</div>
+	<!-- SHOW ERROR/SUCCESS MESSAGES -->
+	<div id="messages" ng-model="message">{{message}}</div>
+	<!-- FORM -->
+	<form ng-submit="processForm()" autocomplete="off">
+		<!-- USERNAME -->
+		<div id="username-group" class="form-group" ng-class="{ 'has-error' : errorUsername }">
+			<label>Username</label><span>&nbsp;</span><span ng-click="openModal()" class="btn-link">Forgotten?</span>
+			<input type="text" name="username" class="form-control" placeholder="sampleUser" ng-model="formData.username">
+			<span class="help-block" ng-show="errorUsername">{{errorUsername}}</span>
+		</div>
+		<!-- PASSCODE -->
+		<div id="passcode-group" class="form-group" ng-class="{ 'has-error' : errorPasscode }">
+			<label>Passcode</label><span>&nbsp;</span><span ng-click="openModal()" class="btn-link">Forgotten?</span>
+			<input type="password" name="passcode" class="form-control" placeholder="s0m3 p@ssKode" ng-model="formData.passcode">
+			<span class="help-block" ng-show="errorPasscode">{{errorPasscode}}</span>
+		</div>
+		<!-- SUBMIT BUTTON -->
+		<button type="submit" class="btn btn-success btn-lg btn-block" ng-submit="preValidate()">
+			sign in <span class="glyphicon glyphicon-log-in"></span> 
+		</button>
+	</form>
+	<form>
+		<div class="form-group">
+			<label></label>
+			<div ng-click="goTo('\join')" class="btn btn-info btn-lg btn-block">
+			new to the team? join us here <span class="glyphicon glyphicon-plus"></span>
+			</div>
+		</div>
+	</form>
+	<div class="page-footer">
+		<p></p>
+		<a href="http://www.bu.edu/cscd/"><img src="assets/images/BU-CSCD.png" class="pull-left"/></a>
+		<!--<p class="highlight">(I'm still working on the name)</p>-->
+	</div>
+	
+	
+
+	<div ng-controller="ModalInstanceCtrl">
+	    <script type="text/ng-template" id="myModalContent.html">
+	        <div class="modal-header">
+	            <h3 class="modal-title">I'm a modal!</h3>
+	        </div>
+	        <div class="modal-body">
+	            <ul>
+	                <li ng-repeat="item in items">
+	                    <a ng-click="selected.item = item">{{ item }}</a>
+	                </li>
+	            </ul>
+	            Selected: <b>{{ selected.item }}</b>
+	        </div>
+	        <div class="modal-footer">
+	            <button class="btn btn-primary" ng-click="ok()">OK</button>
+	            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+	        </div>
+	    </script>
+	
+	    <button class="btn btn-default" ng-click="open()">Open me!</button>
+	    <button class="btn btn-default" ng-click="open('lg')">Large modal</button>
+	    <button class="btn btn-default" ng-click="open('sm')">Small modal</button>
+	    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+	</div>
+
+
+</div> <!-- END Column Div -->

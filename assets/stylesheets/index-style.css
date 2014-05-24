@@ -1,0 +1,35 @@
+.red{
+	text-decoration: none;
+	font-style: none;
+	font-variant: normal;
+	font-weight: normal;
+	color:red;
+}
+p{
+	opacity: 1;//.5
+}
+p.highlight{
+	opacity: 1;
+}
+p:hover{
+	opacity: 1;
+}
+.pull-right{
+	float:right;
+	margin-left: 10px;
+}
+.pull-right{
+	float:left;
+	margin-right: 10px;
+}
+img.pull-right{
+	width: 100px;
+	height: auto;
+}
+.brand{
+	color: black;
+	//color: #9b43ca;
+}
+hr{
+	margin: 0;
+}

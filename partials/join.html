@@ -1,0 +1,45 @@
+<div class="col-md-6 col-md-offset-3" ng-controller="JoinController">
+	<!-- PAGE TITLE -->
+	<div class="page-header">
+		<h1><span class="glyphicon glyphicon-plus"></span> Join Us</h1>
+	</div>
+	<!-- SHOW ERROR/SUCCESS MESSAGES -->
+	<div id="messages"></div>
+	
+	<!-- FORM -->
+	<form class="form" ng-submit="validateIRB()"> <!-- validateIRB() -->
+		<button type="button" class="btn btn-default" ng-click="goTo('/')">
+			<span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Back to Sign In
+		</button>
+		<div class="form-group"></div>
+		<!-- Email -->
+		<div id="username-group" class="form-group">
+			<label for="email_join" class="">Email</label>
+			<input type="text" name="email" class="form-control" placeholder="user@example.edu" id="email_join" ng-model="attemptedUser.email">
+			<span class="help-block">Use the email you used when requesting your IRB code.</span>
+		</div>
+		<!-- VERIFICATION CODE -->
+		<div id="verification-group" class="form-group">
+			<label class="">IRB Code</label>
+			<input type="text" name="IRBcode" class="form-control" placeholder="VK4G6D" ng-model="attemptedUser.code">
+			<label></label>
+			<button type="submit" class="btn btn-success btn-lg btn-block">
+				Verify Code <span class="glyphicon glyphicon-ok"></span> 
+			</button>
+			<span class="help-block">{{codeStatus.message}}</span>
+			<pre>{{attemptedUser}}</pre>
+		</div>
+	</form>
+
+	<!-- PAGE FOOTER -->
+	<brand></brand>
+</div> <!-- END Column Div -->
+	
+	<!--
+	<p>SAVED&trade; - <span class="red">S</span>tandardizing <span class="red">A</span>SL <span class="red">V</span>ocabulary for the <span class="red">E</span>ducation of the <span class="red">D</span>eaf</p>
+			<p>SAVVY&trade; - <span class="red">S</span>tandardizing <span class="red">A</span>SL <span class="red">V</span>iral <span class="red">V</span>ocabulary for our <span class="red">Y</span>outh</p>
+			<p>VAST&trade; - <span class="red">V</span>ocabulary for <span class="red">A</span>SL <span class="red">S</span>tandardization <span class="red">T</span>ool</p>
+			<p>SAVVY&trade; - <span class="red">S</span>igns for <span class="red">A</span>SL <span class="red">V</span>ocabulary, <span class="red">V</span>etted for our <span class="red">Y</span>outh</p>
+			
+			-->
+			

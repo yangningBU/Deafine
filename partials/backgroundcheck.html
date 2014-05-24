@@ -1,0 +1,38 @@
+<div class="col-md-6 col-md-offset-3" ng-controller="BackgroundCheckController">
+	<!-- PAGE TITLE -->
+	<div class="page-header">
+		<h1><span class="glyphicon glyphicon-list-alt"></span> Background Check</h1>
+		<h5>For User: {{currentUser.email}} <span class="glyphicon glyphicon-ok" ng-show="currentUser.email"></span></h5>
+	</div>
+	<form>
+		<div id="background-group" class="form-group">
+			<label>Do you have Deaf parents?</label>
+			<input type="radio" name="haveDeafParents" class="" value="yes"> Yes
+			<input type="radio" name="haveDeafParents" class="" value="no"> No
+			<span class="help-block"></span>
+			<label>How old were you when you learned to sign?</label>
+			<select>
+				<option>0 - 1</option>
+				<option>1 - 2</option>
+				<option>2 - 3</option>
+				<option>3 - 4</option>
+				<option>4 - 5</option>
+				<option>5 - 10</option>
+				<option>10 - 15</option>
+			</select>
+			<span class="help-block"></span>
+			<label>Which type of school did you attend?</label>
+			<select>
+				<option>Deaf Residential School</option>
+				<option>Deaf Day School</option>
+				<option>Mainstream</option>
+				<option>Other</option>
+			</select>
+			<span class="help-block"></span>
+			<!-- SUBMIT BUTTON -->
+			<button type="button" class="btn btn-success btn-lg btn-block">
+				Submit <span class="glyphicon glyphicon-check"></span> 
+			</button>
+		</div>
+	</form>
+</div>

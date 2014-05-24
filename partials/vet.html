@@ -1,0 +1,51 @@
+<link href="css/survey.css" rel="stylesheet"/>
+<link href="css/vettingService.css" rel="stylesheet"/>
+<div ng-controller="VetController">
+	<h2>Current Lecture :: {{currentLecture.name}}</h2>
+	<p>{{apples}}</p>
+
+		<div id="header" class="shadow">
+			<h1>Deafine :: Lecture {{currentLecture.name}}</h1>
+			<h3>
+				Current User: <span ng-show="!showingUserEdit">{{activeUser}} <i class="glyphicon glyphicon-pencil edit" ng-click="toggleUserEdit()"></i></span>
+				<span ng-show="showingUserEdit"><input type="text" size="30" ng-model="activeUser" ng-enter="toggleUserEdit()"/></span>
+			</h3>
+		</div>
+		
+		<!--<div class="section fullSection" id="carouselDiv" ng-controller="CarouselCtrl">	
+			<div id="this-carousel-id" class="carousel slide">
+				<div class="carousel-inner">
+			    	<div ng-repeat="slide in slides" class="item ng-class:slide.activeClass">
+			    		<div class="myLabel title"><h2>Vetting: "{{slide.eng}}"</h2></div>
+						<!--<my-frame data-iframe-src="{{slide.youtube}}">Angular and Youtube are Angry</my-frame>
+					</div>
+				</div>
+				<a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+			    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+			</div>
+		</div> <!-- END #carouselDiv section -->
+		
+		<div class="section fullSection" id="questionnaireDiv">
+			<table id="questionnaire">
+				<tbody>
+					<tr ng-repeat="statement in statements">
+						<td>{{($index+1)}})</td><td>{{statement}}</td>
+						<!--<td ng-repeat="l in likert">
+							<input type="radio" name="{{'question'+($parent.$index+1)}}" id="{{'q'+($parent.$index+1)+'_'+scale[$index]}}" name=""/>
+							<label for="{{'q'+($parent.$index+1)+'_'+scale[$index]}}">{{scale[$index]}}: {{l}}</label>
+						</td>-->
+					</tr>
+					<tr><td align="center" colspan="2"><div type="submit" id="recordSubmitId" class="btn btn-success" ng-click="addResponse('recordSubmitId')">Vet</div></td><td colspan="4"><div id="questionErrorDiv"></div></tr>
+				</tbody>
+			</table>
+			<div class="myLabel">
+				<div id="showRecordsId" class="btn btn-success" ng-click="toggleResults()">
+					<h3>Click Here to {{ showingResults && "Hide" || "Show" }} Previous Responses</h3>
+				</div>
+			</div>
+		</div> <!-- END #questionnaireDiv section -->
+		
+		<div class="section fullSection" id="recordsDiv" ng-show='showingResults'>
+		</div> <!-- END #recordsDiv section -->
+	</div> <!-- END container -->
+
