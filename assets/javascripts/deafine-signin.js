@@ -1,4 +1,4 @@
-Deafine = angular.module("Deafine.controllers",[]);
+Deafine = angular.module("Deafine.signin",[]);
 var SignInController = function($scope, $http, $location, $modal, $log) {
 
 	// create a blank object to hold our form information
@@ -90,22 +90,3 @@ var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
   };
 
 };
-
-
-
-Deafine.controller('VetController',function($scope, $http, $location) {
-
-	
-	$scope.currentLecture = {name:"Geometry",lecturer:"Joe Schmoe"};
-	$scope.slides = [
-		{eng:"shape"},
-		{eng:"line"}
-		];
-		
-	$scope.statements = [
-		{}
-	];
-	$scope.showingResults = false;
-	$scope.showingUserEdit = false;
-
-});
