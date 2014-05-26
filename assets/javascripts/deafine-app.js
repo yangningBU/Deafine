@@ -1,5 +1,5 @@
 // define angular module/app
-Deafine = angular.module('Deafine', ["ui.bootstrap","Deafine.controllers","Deafine.services"]);
+Deafine = angular.module('Deafine', ["ui.bootstrap","Deafine.controllers","Deafine.services","Deafine.topics"]);
 
 Deafine.config(function($routeProvider,$locationProvider) { 
 	//$locationProvider.html5Mode(false);
@@ -13,21 +13,19 @@ Deafine.config(function($routeProvider,$locationProvider) {
     $routeProvider.when('/background', {
         templateUrl: 'partials/backgroundcheck.html'
     });
-    $routeProvider.when('/forgot/username', {
-        template: '<div>HAHA You forgot your username!</div>'
-    });
-    $routeProvider.when('/forgot/passcode', {
-        template: '<div>HAHA You forgot your passcode!</div>'
-    });
     $routeProvider.when('/vet', {
         templateUrl: 'partials/vet.html'
     });
     $routeProvider.when('/home', {
-	    templateUrl: 'partials/homepage.html'
+	    templateUrl: 'partials/topics.html'
     });
     $routeProvider.otherwise({
         redirectTo: "/"
     });
+    
+    if(window.history && window.history.pushState){
+    	//$locationProvider.html5Mode(true).hashPrefix('!');
+	}
     
 });
 Deafine.directive("brand",function($scope){ // DOESNT WORK RIGHT NOW
