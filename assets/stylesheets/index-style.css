@@ -26,10 +26,18 @@ img.pull-right{
 	width: 100px;
 	height: auto;
 }
-.brand{
-	color: black;
-	//color: #9b43ca;
-}
 hr{
 	margin: 0;
+}
+.last-vetted video{
+	border: 1px solid black;
+	display: inline-block;
+}
+.last-vetted{
+	display: inline-table;
+	text-align: center;
+	width:100%
+}
+#mainContent.notsignin{
+	margin-top:100px;
 }

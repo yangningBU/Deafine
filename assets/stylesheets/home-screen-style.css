@@ -1,0 +1,19 @@
+body{
+	
+}
+#lectures {
+    width:800px;
+    height:300px;
+    margin-top: 250px;
+    margin-bottom: -200px;
+    //display: relative;
+    position:relative;
+	clear:both;
+	//overflow:hidden;
+	//margin:0 auto;
+}
+#lectures img {
+	border: 1px solid black;
+    display: hidden; /* hide images until carousel prepares them */
+    cursor: pointer; /* not needed if you wrap carousel items in links */
+}
