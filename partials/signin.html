@@ -10,13 +10,13 @@
 	<form ng-submit="processForm()" autocomplete="off">
 		<!-- USERNAME -->
 		<div id="username-group" class="form-group" ng-class="{ 'has-error' : errorUsername }">
-			<label>Username</label><span>&nbsp;</span><span ng-click="openModal()" class="btn-link">Forgotten?</span>
+			<label>Username</label><span>&nbsp;</span><span ng-click="forgotCredentials()" class="btn-link">Forgotten?</span>
 			<input type="text" name="username" class="form-control" placeholder="sampleUser" ng-model="formData.username">
 			<span class="help-block" ng-show="errorUsername">{{errorUsername}}</span>
 		</div>
 		<!-- PASSCODE -->
 		<div id="passcode-group" class="form-group" ng-class="{ 'has-error' : errorPasscode }">
-			<label>Passcode</label><span>&nbsp;</span><span ng-click="openModal()" class="btn-link">Forgotten?</span>
+			<label>Passcode</label><span>&nbsp;</span><span ng-click="forgotCredentials()" class="btn-link">Forgotten?</span>
 			<input type="password" name="passcode" class="form-control" placeholder="s0m3 p@ssKode" ng-model="formData.passcode">
 			<span class="help-block" ng-show="errorPasscode">{{errorPasscode}}</span>
 		</div>
@@ -28,16 +28,15 @@
 	<form>
 		<div class="form-group">
 			<label></label>
-			<div ng-click="goTo('\lectures')" class="btn btn-info btn-lg btn-block">
-			go directly into the homepage <span class="glyphicon glyphicon-plus"></span> <!--new to the team? join us here-->
+			<div ng-click="goTo('/join')" class="btn btn-info btn-lg btn-block">
+			new to the team? join us here <span class="glyphicon glyphicon-plus"></span> <!--new to the team? join us here-->
 			</div>
 		</div>
 	</form>
 	<div class="page-footer">
-		<p></p>
+		<p>{{selected}}</p>
 		<img src="assets/images/BU-CSCD.png" class="pull-left"/>
 		<!--<p class="highlight">(I'm still working on the name)</p>-->
 	</div>
-
 
 </div> <!-- END Column Div -->

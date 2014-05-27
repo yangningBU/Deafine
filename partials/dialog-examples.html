@@ -1,0 +1,31 @@
+	<div ng-controller="dialogServiceTest" class="pad">
+		<div class="row">
+	      <div class="col-md-12">
+	        <button class="btn btn-danger" ng-click="launch('error')">Error Dialog</button>
+	    
+	        <button class="btn btn-primary" ng-click="launch('wait')">Wait Dialog</button>
+	    
+	        <button class="btn btn-default" ng-click="launch('notify')">Notify Dialog</button>
+	    
+	        <button class="btn btn-success" ng-click="launch('confirm')">Confirm Dialog</button>
+	        
+	        <button class="btn btn-warning" ng-click="launch('create')">Custom Dialog</button>
+	      </div>
+	    </div>
+	    <br />
+	    <div class="row">
+	      <div class="col-md-12">
+	        <p>
+	          <span class="text-info">From Confirm Dialog</span>: {{confirmed}}
+	        </p>
+	      </div>
+	    </div>
+	    <br />
+	    <div class="row">
+	      <div class="col-md-12">
+	        <p>
+	          <span class="text-info">Your Name</span>: {{name}}
+	        </p>
+	      </div>
+	    </div>
+	</div>

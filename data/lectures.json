@@ -1,4 +1,4 @@
-{"data":[
+[
 		{"name":"1","path":"image1.gif"},
 		{"name":"2","path":"image2.gif"},
 		{"name":"3","path":"image3.gif"},
@@ -6,5 +6,8 @@
 		{"name":"5","path":"image5.gif"},
 		{"name":"6","path":"image6.gif"},
 		{"name":"7","path":"image7.gif"},
-		{"name":"8","path":"image8.gif"}
-]}
+		{"name":"8","path":"image8.gif"},
+		{"name":"8","path":"image9.gif"},
+		{"name":"8","path":"image10.gif"},
+		{"name":"8","path":"image11.gif"}
+]

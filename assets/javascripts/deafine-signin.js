@@ -1,5 +1,5 @@
-Deafine = angular.module("Deafine.signin",[]);
-var SignInController = function($scope, $http, $location, $modal, $log) {
+Deafine = angular.module("Deafine.signin",['dialogs']);
+var SignInController = function($scope, $http, $location, $dialogs) {
 
 	// create a blank object to hold our form information
 	// $scope will allow this to pass between controller and view
@@ -27,7 +27,8 @@ var SignInController = function($scope, $http, $location, $modal, $log) {
 	$scope.processForm = function() {
 		var test = $scope.preValidate();
 		if( test ){
-			alert("formData.username,passcode = {"+$scope.formData.username+", "+$scope.formData.passcode+"}");
+			$scope.currentUser.username = $scope.formData.username;
+			$scope.goTo('/lectures');
 		} else{
 			//alert("why no work?");
 		}
@@ -47,46 +48,8 @@ var SignInController = function($scope, $http, $location, $modal, $log) {
 		});
 	};
 	
-	$scope.items = ['item1', 'item2', 'item3'];
-	$scope.selected = "";
-	
-	$scope.openModal = function () {
-	
-		var modalInstance = $modal.open({
-		  templateUrl: 'partials/forgot-username-password.html',
-		  controller: ModalInstanceCtrl,
-		  resolve: {
-		    items: function () {
-		      return $scope.items;
-		    }
-		  }
-		  });
-	
-		modalInstance.result.then(function (selectedItem) {
-			$scope.selected = selectedItem;
-		}, function () {
-			alert('Modal dismissed at: ' + new Date());
-		});
-	};
-	
-
-
-};
-
-
-var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
-
-  $scope.items = items;
-  $scope.selected = {
-    item: $scope.items[0]
-  };
-
-  $scope.ok = function () {
-    $modalInstance.close($scope.selected.item);
-  };
-
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-  };
+	$scope.forgotCredentials = function(){
+		dlg = $dialogs.notify('Lost your way?','<p>Please contact our team at <a href="mailto:buaslstem@gmail.com?subject=Deafine :: Username/Password Request&body=Hello Project Deafine Team, I\'ve lost my login credentials. My name is _______________.">buaslstem@gmail.com</a> to retrieve your username or passcode.</p>');
+	}
 
 };

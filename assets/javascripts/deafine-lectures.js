@@ -1,11 +1,11 @@
 Deafine = angular.module("Deafine.lectures",[]);
 
-Deafine.controller("LecturesController",function($scope,$http){
+Deafine.controller("LecturesController",function($scope,$http,$dialogs){
 	$scope.selectedIndex = 0;
 	$scope.lectures = [0];
 	$http.get('data/lectures.json')
 		.success(function(data, status, headers, config) {
-	    	$scope.lectures = data.data;
+	    	$scope.lectures = data;
 	    })
 	    .error(function(data, status, headers, config) {
 	    	alert("Error in GET data/lectures.json: "+data); 
@@ -16,31 +16,17 @@ Deafine.controller("LecturesController",function($scope,$http){
 		//$scope.activeLecture = $scope.lectures[$scope.selectedIndex];
 	}
 	
-	$scope.openModal = function (ind) {
+	$scope.openLecture = function(ind){
 		$scope.selectedIndex = ind;
-		var modalInstance = $modal.open({
-		  templateUrl: 'partials/forgot-username-password.html',
-		  controller: ModalInstanceCtrl,
-		  resolve: {
-		    items: function () {
-		      return $scope.items;
-		    }
-		  }
-		  });
-	
-		modalInstance.result.then(function (selectedItem) {
-			$scope.selected = selectedItem;
-		}, function () {
-			alert('Modal dismissed at: ' + new Date());
-		});
-	};
+		dlg = $dialogs.notify('You\'ve opened a lecture!','<p>Index = '+ind+'</p>');
+	}
 	
 
 
 });
 
 
-var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
+/*var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
 
   $scope.items = items;
   $scope.selected = {
@@ -54,4 +40,4 @@ var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
   $scope.cancel = function () {
     $modalInstance.dismiss('cancel');
   };
-};
+};*/

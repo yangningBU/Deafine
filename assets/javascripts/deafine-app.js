@@ -1,11 +1,9 @@
 // define angular module/app
-Deafine = angular.module('Deafine', ["ui.bootstrap","Deafine.services","Deafine.signin","Deafine.topics","Deafine.lectures"]);
+Deafine = angular.module('Deafine', ["ngRoute", "ngCookies", "ui.bootstrap", "dialogs", "modalTest", "Deafine.services", "Deafine.signin", "Deafine.topics", "Deafine.lectures", "Deafine.join"]);
 
 Deafine.config(function($routeProvider,$locationProvider) { 
-	//$locationProvider.html5Mode(false);
-    //$locationProvider.hashPrefix('!');
     $routeProvider.when('/', {
-        templateUrl: 'partials/signin.html' //'partials/signin.html'
+        templateUrl: 'partials/lectures.html' //'partials/signin.html'
     });
     $routeProvider.when('/join', {
         templateUrl: 'partials/join.html'
@@ -25,6 +23,8 @@ Deafine.config(function($routeProvider,$locationProvider) {
     $routeProvider.otherwise({
         redirectTo: "/"
     });
+    $locationProvider.html5Mode(false);
+    $locationProvider.hashPrefix('!');
     
 });
 Deafine.directive("brand",function($scope){ // DOESNT WORK RIGHT NOW
@@ -45,7 +45,8 @@ Deafine.controller('AppController',function($scope, $http, $location) {
 		isSignedIn : false,
 		email: "",
 		username : "",
-		IRBcode : ""
+		IRBcode : "",
+		lastLectureVetted: 0
 	};
 	
 	$scope.showingSignin = true;
