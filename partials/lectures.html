@@ -1,39 +1,12 @@
 <link rel="stylesheet" href="assets/stylesheets/lectures-style.css"/>
-<div ng-controller="LecturesController">
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<h3 class="brand"><span class="glyphicon glyphicon-dashboard"></span> {{currentUser.username || "Guest User"}}</h3>
-					<h4>Lectures Vetted: <span>{{selectedIndex}}/{{lectures.length}}</span></h4>
-					<h4>Concepts Vetted: <span>{{lectures.length*5}}</span></h4>
-				</div>
-				<div class="col-sm-4">
-					<div class="last-vetted">
-						<h4>Last Lecture Vetted:</h4>
-						<video height="72" width="128">
-							<source src="assets/videos/signs/Measure_CB_S.mov" type="video/mp4">
-						</video>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="last-vetted">
-						<h4>Last Concept Vetted:</h4>
-						<video height="72" width="128">
-							<source src="assets/videos/signs/Measure_CB_S.mov" type="video/mp4">
-						</video>
-					</div>
-				</div>
-			</div>
-		</div>
-	</nav>
-	
-	<div class="row" id="lectureResultsContainer">
-		<div class="result col-lg-6" 
-		ng-repeat="lecture in lectures"
-		ng-mouseenter="updateActiveLecture($index)"
-		ng-click="openLecture($index)">
-			<img ng-src="assets/images/{{lecture.path}}" width="240" height="auto"/>
-		</div>
+<div class="row" id="lectureResultsContainer">
+	<div class="result col-lg-6" 
+	ng-repeat="lecture in lectures"
+	ng-mouseenter="updateActiveLecture($index)"
+	><!--ng-click="openLecture($index)"-->
+	<a href="#!/lectures/{{$index}}">
+		<h4 ng-show="usingEnglish">{{lecture.name}}</h4>
+		<img class="video" ng-src="assets/images/{{lecture.path}}" width="240" height="auto"/>
+	</a>
 	</div>
 </div>

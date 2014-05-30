@@ -1,13 +1,13 @@
 [
-		{"name":"1","path":"image1.gif"},
-		{"name":"2","path":"image2.gif"},
-		{"name":"3","path":"image3.gif"},
-		{"name":"4","path":"image4.gif"},
-		{"name":"5","path":"image5.gif"},
-		{"name":"6","path":"image6.gif"},
-		{"name":"7","path":"image7.gif"},
-		{"name":"8","path":"image8.gif"},
-		{"name":"8","path":"image9.gif"},
-		{"name":"8","path":"image10.gif"},
-		{"name":"8","path":"image11.gif"}
+		{"name":"Biology","path":"image1.gif"},
+		{"name":"Chemistry","path":"image2.gif"},
+		{"name":"Conducting an Experiment","path":"image3.gif"},
+		{"name":"Django","path":"image4.gif"},
+		{"name":"Ruby on Rails","path":"image5.gif"},
+		{"name":"AngularJS","path":"image6.gif"},
+		{"name":"AutoCAD Light","path":"image7.gif"},
+		{"name":"SolidWorks","path":"image8.gif"},
+		{"name":"MatLab Simulink","path":"image9.gif"},
+		{"name":"Python Madness","path":"image10.gif"},
+		{"name":"Liquid Gel","path":"image11.gif"}
 ]

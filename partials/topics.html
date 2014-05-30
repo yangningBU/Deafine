@@ -1,53 +1,53 @@
 <link href="assets/stylesheets/topics-style.css" rel="stylesheet"/>
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<h3 class="brand"><span class="glyphicon glyphicon-dashboard"></span> {{user.name || "Guest User"}}</h3>
-					<h4>Lectures Vetted: <span>{{1}}/{{5}}</span></h4>
-					<h4>Concepts Vetted: <span>{{12}}</span></h4>
-				</div>
-				<div class="col-sm-4">
-					<div class="last-vetted">
-						<h4>Last Lecture Vetted:</h4>
-						<video height="72" width="128">
-							<source src="assets/videos/signs/Measure_CB_S.mov" type="video/mp4">
-						</video>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="last-vetted">
-						<h4>Last Concept Vetted:</h4>
-						<video height="72" width="128">
-							<source src="assets/videos/signs/Measure_CB_S.mov" type="video/mp4">
-						</video>
-					</div>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<h3 class="brand"><span class="glyphicon glyphicon-dashboard"></span> {{user.name || "Guest User"}}</h3>
+				<h4>Lectures Vetted: <span>{{1}}/{{5}}</span></h4>
+				<h4>Concepts Vetted: <span>{{12}}</span></h4>
+			</div>
+			<div class="col-sm-4">
+				<div class="last-vetted">
+					<h4>Last Lecture Vetted:</h4>
+					<video height="72" width="128">
+						<source src="assets/videos/signs/Measure_CB_S.mov" type="video/mp4">
+					</video>
 				</div>
 			</div>
-		</div>
-	</nav>
-	<div class="row">
-		<div class="col-lg-12">
-			<div id="lectures" ng-controller="TopicsController">
-				<img src="assets/images/image6.gif" alt="Image 6" />
-				<img src="assets/images/image7.gif" alt="Image 7" />
-				<img src="assets/images/image8.gif" alt="Image 8" />
-				<img src="assets/images/image9.gif" alt="Image 9" />
-				<img src="assets/images/image10.gif" alt="Image 10" />
-				<img src="assets/images/image11.gif" alt="Image 11" />
-				<img src="assets/images/image1.gif" alt="Image 1" />
-				<img src="assets/images/image2.gif" alt="Image 2" />
-				<img src="assets/images/image3.gif" alt="Image 3" />
-				<img src="assets/images/image4.gif" alt="Image 4" />
-				<img src="assets/images/image5.gif" alt="Image 5" />
+			<div class="col-sm-4">
+				<div class="last-vetted">
+					<h4>Last Concept Vetted:</h4>
+					<video height="72" width="128">
+						<source src="assets/videos/signs/Measure_CB_S.mov" type="video/mp4">
+					</video>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div>
+</nav>
+<div class="row">
+	<div class="col-lg-12">
+		<div id="lectures">
+			<img src="assets/images/image6.gif" alt="Image 6" />
+			<img src="assets/images/image7.gif" alt="Image 7" />
+			<img src="assets/images/image8.gif" alt="Image 8" />
+			<img src="assets/images/image9.gif" alt="Image 9" />
+			<img src="assets/images/image10.gif" alt="Image 10" />
+			<img src="assets/images/image11.gif" alt="Image 11" />
+			<img src="assets/images/image1.gif" alt="Image 1" />
+			<img src="assets/images/image2.gif" alt="Image 2" />
+			<img src="assets/images/image3.gif" alt="Image 3" />
+			<img src="assets/images/image4.gif" alt="Image 4" />
+			<img src="assets/images/image5.gif" alt="Image 5" />
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div>
 		<div class="panel panel-default">
 			<div class="panel-heading">Active Slide</div>
 			<div class="panel-body">{{"Some Data"}}</div>
 		</div>
-		</div>
+	</div>
 </div>

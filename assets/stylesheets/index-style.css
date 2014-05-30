@@ -29,7 +29,7 @@ img.pull-right{
 hr{
 	margin: 0;
 }
-.last-vetted video{
+.last-vetted video, .last-vetted.video{
 	border: 1px solid black;
 	display: inline-block;
 }

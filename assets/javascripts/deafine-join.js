@@ -1,6 +1,5 @@
-Deafine = angular.module("Deafine.join",[]);
-
-Deafine.controller('JoinController',function($scope, $http, $location) {
+angular.module("Deafine.join",[])
+.controller('JoinController',function($scope, $http, $location) {
 
 	// create a blank object to hold our form information
 	// $scope will allow this to pass between controller and view

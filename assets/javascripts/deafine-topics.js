@@ -1,5 +1,5 @@
-Deafine = angular.module("Deafine.topics",[]);
-Deafine.controller('TopicsController',function($scope, $http) {
+angular.module("Deafine.topics",[])
+.controller('TopicsController',function($scope, $http) {
 	$scope.flankingItems = {number:2};
 	$scope.lectureCarousel = $('#lectures').waterwheelCarousel({
 		flankingItems: 3,

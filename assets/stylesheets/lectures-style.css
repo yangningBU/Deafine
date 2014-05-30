@@ -16,10 +16,29 @@
 	//border: 1px solid black;
 	display: inline-block;
 }
-#lectureResultsContainer div img{
-	border: 1px solid transparent;
+#lectureResultsContainer div .video.vetted{
+	border: 5px solid green;
 	margin: 5px;
 }
-#lectureResultsContainer div img:hover{
+#lectureResultsContainer div .video{
+	border: 5px solid black;
+	margin: 5px;
+}
+#lectureResultsContainer div .video:hover{
+	border: 5px solid white;
+}
+h1,h2,h3,h4,h5,h6{
+	text-align: center;
+}
+#lectureContainer{
+	position: relative;
+	height:500px;
+	overflow:scroll;
+	border: solid 1px black;
+	margin-top: 150px;
 	border: 1px solid black;
+	text-align: left;
+	//text-indent: 10px;
+	padding-top: 10px;
+	padding-left: 60px;
 }

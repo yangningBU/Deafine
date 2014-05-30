@@ -1,4 +1,4 @@
-Deafine = angular.module("Deafine.signin",['dialogs']);
+angular.module("Deafine.signin",['dialogs']);
 var SignInController = function($scope, $http, $location, $dialogs) {
 
 	// create a blank object to hold our form information

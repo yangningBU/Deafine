@@ -1,27 +1,39 @@
 // define angular module/app
-Deafine = angular.module('Deafine', ["ngRoute", "ngCookies", "ui.bootstrap", "dialogs", "modalTest", "Deafine.services", "Deafine.signin", "Deafine.topics", "Deafine.lectures", "Deafine.join"]);
+Deafine = angular.module('Deafine', ["ngRoute", "ngResource", "ngCookies", "ui.bootstrap", "Deafine.services", "Deafine.signin", "Deafine.topics", "Deafine.lectures", "Deafine.join"]);
 
 Deafine.config(function($routeProvider,$locationProvider) { 
     $routeProvider.when('/', {
-        templateUrl: 'partials/lectures.html' //'partials/signin.html'
+	    templateUrl: 'partials/lectures.html',
+	    controller: "LecturesController"
     });
+    /*$routeProvider.when('/', {
+        templateUrl: 'partials/signin.html', //'partials/signin.html'
+        controller: "SignInController"
+    });*/
     $routeProvider.when('/join', {
-        templateUrl: 'partials/join.html'
+        templateUrl: 'partials/join.html',
+        controller: "JoinController"
     });
-    $routeProvider.when('/background', {
+    /*$routeProvider.when('/background', {
         templateUrl: 'partials/backgroundcheck.html'
     });
     $routeProvider.when('/vet', {
         templateUrl: 'partials/vet.html'
-    });
+    });*/
     $routeProvider.when('/home', {
-	    templateUrl: 'partials/topics.html'
+	    templateUrl: 'partials/topics.html',
+	    controller: "TopicsController"
     });
     $routeProvider.when('/lectures', {
-	    templateUrl: 'partials/lectures.html'
+	    templateUrl: 'partials/lectures.html',
+	    controller: "LecturesController"
+    });
+    $routeProvider.when('/lectures/:id', {
+	    templateUrl: 'partials/lecture.html',
+	    controller: 'LectureController'
     });
     $routeProvider.otherwise({
-        redirectTo: "/"
+        redirectTo: "/lectures"
     });
     $locationProvider.html5Mode(false);
     $locationProvider.hashPrefix('!');
@@ -35,20 +47,31 @@ Deafine.directive("brand",function($scope){ // DOESNT WORK RIGHT NOW
 	}
 });
 Deafine.controller('AppController',function($scope, $http, $location) {
-	
+	$scope.usingEnglish = true;
+	$scope.toggleEnglish = function(){
+		$scope.usingEnglish = !$scope.usingEnglish;
+	}
 	// Updating the View
 	$scope.goTo = function(path){
+		//alert("About to go to "+path);
+		if(path=="/" || path=="/join"){
+			$scope.showingSignInPage = true;
+		} else{
+			$scope.showingSignInPage = false;
+		}
 		$location.path(path);
 	};
 	
 	$scope.currentUser = {
 		isSignedIn : false,
-		email: "",
-		username : "",
-		IRBcode : "",
-		lastLectureVetted: 0
+		email: null,
+		username : null,
+		lastLectureVetted: null,
+		lastTermVetted: null,
+		totalLecturesVetted: 0,
+		totalTermsVetted: 0
 	};
 	
-	$scope.showingSignin = true;
+	$scope.showingSignInPage = false;
 
 });
