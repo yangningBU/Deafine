@@ -38,12 +38,21 @@ hr{
 	text-align: center;
 	width:100%
 }
-#mainContent.notsignin{
+#mainContent{
 	margin-top:100px;
 }
-
 .modal { 
 	display: block;
+}
+
+.brand{
+	display: inline-table;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.scroll{
+	overflow: scroll;
 }
 
 /* Custom dialog/modal headers */

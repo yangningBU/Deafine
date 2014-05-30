@@ -1,0 +1,38 @@
+#lectureContainer{
+	position: relative;
+	height:500px;
+	//border: solid 1px black;
+	text-align: left;
+}
+#lectureContainer div.main-video{
+	width: 640px;
+	height: 360px;
+}
+
+#lectureContainer .video{
+	//width: 100%;
+	//height: 100%;
+}
+#backButton{
+	margin-bottom: 10px;	
+}
+#left-div{
+	text-align: center;
+}
+#left-div .scroll{
+	border: 1px solid black;
+	height: 400px;
+}
+.term .video{
+	border: 5px solid black;
+	margin: 10px;
+}
+.term .video:hover{
+	border-color: white;
+}
+.term .vetted{
+	border-color: green;
+}
+#main {
+	text-align: center;
+}

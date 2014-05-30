@@ -1,11 +1,33 @@
-<link rel="stylesheet" href="assets/stylesheets/lectures-style.css"/>
+<link rel="stylesheet" href="assets/stylesheets/lecture-style.css"/>
 <div>
 	<div id="lectureContainer">
 		<div class="row">
-			<div class="col-sm-1"><a class="btn" href="#!/lectures"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back to Lectures</a></div>
+			<div class="col-sm-1" id="backButton"></div>
 		</div>
-		<div class="row" ng-show="usingEnglish">
-			<h1>You're viewing Lecture {{selectedIndex+1}}, {{selectedLecture.name}}</h1>
+		<div class="row">
+			<div class="col-md-4" id="left-div">
+				<div class="col-lg-6" id="lecture"><!--ng-click="openLecture($index)"-->
+					<a class="btn btn-default" href="#!/lectures"><span class="glyphicon glyphicon-circle-arrow-left"></span>&nbsp;<span ng-show="usingEnglish">Back to Lectures</span></a>
+					<h4 ng-show="usingEnglish">{{lectures[selectedIndex].name}}</h4>
+					<img class="video" ng-src="assets/images/{{lectures[selectedIndex].path}}" width="200" height="auto"/>
+				</div>
+				<br/>
+				<div class="scroll">
+					<div class="term col-lg-6" 
+					ng-repeat="lecture in lectures"
+					ng-mouseenter="updateActiveLecture($index)"
+					><!--ng-click="openLecture($index)"-->
+					<a href="#!/lectures/{{$index}}">
+						<h4 ng-show="usingEnglish">{{lecture.name}}</h4>
+						<img class="video" ng-src="assets/images/{{lecture.path}}" width="200" height="auto"/>
+					</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8" id="main">
+				<h1 ng-show="usingEnglish">{{selectedLecture.name}}</h1>
+				<img class="video" src="assets/images/{{selectedLecture.path}}" width="600" height="auto"/>
+			</div>
 		</div>
 	</div>
 </div>
