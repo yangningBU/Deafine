@@ -2,31 +2,67 @@
 <div>
 	<div id="lectureContainer">
 		<div class="row">
-			<div class="col-sm-1" id="backButton"></div>
-		</div>
-		<div class="row">
-			<div class="col-md-4" id="left-div">
-				<div class="col-lg-6" id="lecture"><!--ng-click="openLecture($index)"-->
-					<a class="btn btn-default" href="#!/lectures"><span class="glyphicon glyphicon-circle-arrow-left"></span>&nbsp;<span ng-show="usingEnglish">Back to Lectures</span></a>
-					<h4 ng-show="usingEnglish">{{lectures[selectedIndex].name}}</h4>
-					<img class="video" ng-src="assets/images/{{lectures[selectedIndex].path}}" width="200" height="auto"/>
+			<div class="col-md-4 col-lg-4" id="left-div">
+				<div id="lecture"><!--ng-click="openLecture($index)"-->
+					<a class="btn btn-default" id="backButton" href="#!/lectures"><i class="fa fa-arrow-left"></i>&nbsp;<span ng-show="usingEnglish">Back to Lectures</span></a>
+					<div ng-click="updateToShowLecture()">
+						<h4 ng-show="usingEnglish">{{selected.lecture.name}}</h4>
+						<img class="video" ng-src="assets/images/{{selected.lecture.path}}" width="200" height="auto"/>
+					</div>
 				</div>
 				<br/>
 				<div class="scroll">
-					<div class="term col-lg-6" 
-					ng-repeat="lecture in lectures"
-					ng-mouseenter="updateActiveLecture($index)"
-					><!--ng-click="openLecture($index)"-->
-					<a href="#!/lectures/{{$index}}">
-						<h4 ng-show="usingEnglish">{{lecture.name}}</h4>
-						<img class="video" ng-src="assets/images/{{lecture.path}}" width="200" height="auto"/>
-					</a>
+					<div class="term" 
+					ng-repeat="term in terms"
+					ng-click="updateActiveTerm($index)"
+					ng-hide="loadingPage"
+					>
+						<h4 ng-show="usingEnglish">{{term.name}}</h4>
+						<img class="video" ng-src="assets/images/{{term.path}}" width="200" height="auto"/>
+					</div>
+					<div ng-show="loadingPage" class="spinnerDiv">
+						<h3 ng-show="usingEnglish">Loading Terms...</h3>
+						<i class="fa fa-refresh fa-5x fa-spin"></i>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-8" id="main">
-				<h1 ng-show="usingEnglish">{{selectedLecture.name}}</h1>
-				<img class="video" src="assets/images/{{selectedLecture.path}}" width="600" height="auto"/>
+			<div class="col-md-8 col-lg-8 main" ng-show="showingLecture">
+				<div class="row"></div>
+				<h1 ng-show="usingEnglish">{{selected.lecture.name}}</h1>
+				<img class="video" src="assets/images/{{selected.lecture.path}}" width="600" height="auto"/>
+			</div>
+			<div class="col-md-8 col-lg-8 main" ng-hide="showingLecture">
+				<div class="row"></div>
+				<h1 ng-show="usingEnglish">{{selected.term.name}}</h1>
+				<img class="video" src="assets/images/{{selected.term.path}}" width="600" height="auto"/>
+				
+				<div class="section fullSection" id="carouselDiv">	
+					<div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
+						<div class="carousel-inner">
+					    	<div ng-repeat="slide in slides" class="item ng-class:slide.activeClass"><!-- class of active since it's the first item -->
+					    		<div class="myLabel title"><h2>Vetting: "{{slide.eng}}"</h2></div>
+								<my-frame data-iframe-src="{{slide.youtube}}">Angular and Youtube are Angry</my-frame>
+							</div>
+						</div>
+						<a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+					    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+					</div>
+				</div> <!-- END #carouselDiv section -->
+				
+				
+				<p class="question">{{questions[0]}}</p>
+				
+				
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-2"><input type="radio" value="-2" id="neg2" name="rating"/><br/><label for="neg2"><i class="fa fa-frown-o fa-3x"></i></label></div>
+					<div class="col-md-2"><input type="radio" value="-1" id="neg1" name="rating"/><br/><label for="neg1"><i class="fa fa-frown-o fa-3x invisible"></i></label></div>
+					<div class="col-md-2"><input type="radio" value="0" id="zero" name="rating"/><br/><label for="zero"><i class="fa fa-meh-o fa-3x"></i></label></div>
+					<div class="col-md-2"><input type="radio" value="1" id="pos1" name="rating"/><br/><label for="pos1"><i class="fa fa-frown-o fa-3x invisible"></i></label></div>
+					<div class="col-md-2"><input type="radio" value="2" id="pos2" name="rating"/><br/><label for="pos2"><i class="fa fa-smile-o fa-3x"></i></label></div>
+					<div class="col-md-1"></div>
+				</div>
+				<pre>{{selected.termRatings}}</pre>
 			</div>
 		</div>
 	</div>

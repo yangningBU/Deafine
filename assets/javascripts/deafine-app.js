@@ -1,5 +1,5 @@
 // define angular module/app
-Deafine = angular.module('Deafine', ["ngRoute", "ngResource", "ngCookies", "ui.bootstrap", "Deafine.services", "Deafine.signin", "Deafine.topics", "Deafine.lectures", "Deafine.join"]);
+Deafine = angular.module('Deafine', ["ngRoute", "ngResource", "ngCookies", "ui.bootstrap", "Deafine.services", "Deafine.signin", "Deafine.topics", "Deafine.lectures", "Deafine.terms", "Deafine.join"]);
 
 Deafine.config(function($routeProvider,$locationProvider) { 
     $routeProvider.when('/', {
@@ -47,7 +47,7 @@ Deafine.directive("brand",function($scope){ // DOESNT WORK RIGHT NOW
 	}
 });
 Deafine.controller('AppController',function($scope, $http, $location) {
-	$scope.usingEnglish = false;
+	$scope.usingEnglish = true;
 	$scope.toggleEnglish = function(){
 		$scope.usingEnglish = !$scope.usingEnglish;
 	}
@@ -73,5 +73,6 @@ Deafine.controller('AppController',function($scope, $http, $location) {
 	};
 	
 	$scope.showingSignInPage = false;
+	$scope.navbarIsCollapsed = true;
 
 });

@@ -1,12 +1,18 @@
 <link rel="stylesheet" href="assets/stylesheets/lectures-style.css"/>
 <div id="lectureResultsContainer">
-	<div class="result col-lg-6" 
-	ng-repeat="lecture in lectures"
-	ng-mouseenter="updateActiveLecture($index)"
-	><!--ng-click="openLecture($index)"-->
-	<a href="#!/lectures/{{$index}}">
-		<h4 ng-show="usingEnglish">{{lecture.name}}</h4>
-		<img class="video" ng-src="assets/images/{{lecture.path}}" width="240" height="auto"/>
-	</a>
+	<div ng-show="loadingPage" class="col-md-2 col-md-offset-5 spinnerDiv">
+		<h3 ng-show="usingEnglish">Loading Lectures...</h3>
+		<i class="fa fa-refresh fa-5x fa-spin"></i>
+	</div>
+	<div class="row" style="padding-left:45px !important;" ng-hide="loadingPage">
+		<div class="result col-md-6" 
+		ng-repeat="lecture in lectures"
+		ng-mouseenter="updateActiveLecture($index)"
+		><!--ng-click="openLecture($index)"-->
+		<a href="#!/lectures/{{$index}}">
+			<h4 ng-show="usingEnglish">{{lecture.name}}</h4>
+			<img class="video" ng-src="assets/images/{{lecture.path}}" width="240" height="auto"/>
+		</a>
+		</div>
 	</div>
 </div>

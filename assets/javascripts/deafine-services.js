@@ -3,8 +3,11 @@ angular.module('Deafine.services', [])
 .service("LectureAPIService",function($http,$q){	
 	
 	var lectures = [];
+	var terms = [];
 	var activeLectureIndex;
+	var activeTermIndex;
 	var activeLecture = null;
+	var activeTerm = null;
 	
 	return {
     	getLectures: function(){
@@ -15,9 +18,23 @@ angular.module('Deafine.services', [])
 	    	activeLectureIndex = ind;
 			activeLecture = lectures[ind];
 	    },
+	    setActiveTerm: function(ind){
+	    	activeTermIndex = ind;
+			activeTerm = terms[ind];
+	    },
 	    storeLectures: function(array) {
 			//alert("storing");
 			lectures = array;
+		},
+		storeTerms: function(array) {
+			//alert("storing");
+			terms = array;
+		},
+		getActiveLecture: function(){
+			return activeLecture;
+		},
+		getActiveTerm: function(){
+			return activeTerm;
 		}
     }
 	/*

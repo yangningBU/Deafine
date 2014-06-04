@@ -1,11 +1,13 @@
 angular.module("Deafine.lectures",["Deafine.services"])
 .controller("LecturesController",function($scope,$http,$dialogs,LectureAPIService){
+	$scope.loadingPage = 1;
 	$scope.selectedIndex = 0;
 	$scope.lectures = [];
 	$http.get('data/lectures.json')
 		.success(function(data, status, headers, config) {
 	    	$scope.lectures = data;
 	    	LectureAPIService.storeLectures($scope.lectures);
+	    	$scope.loadingPage--;
 	    })
 	    .error(function(data, status, headers, config) {
 	    	alert("Error in GET data/lectures.json: "+data); 
@@ -23,16 +25,6 @@ angular.module("Deafine.lectures",["Deafine.services"])
 	}
 	
 	$scope.updateActiveLecture($scope.selectedIndex);
-
-})
-.controller("LectureController",function($scope,$routeParams,LectureAPIService){
-	$scope.selectedIndex = parseInt($routeParams.id);
-	$scope.goBack = function(){
-		$scope.goTo("/lectures");
-	}
-	$scope.lectures = LectureAPIService.getLectures();
-	$scope.selectedLecture = $scope.lectures[$scope.selectedIndex];
-
 
 });
 
