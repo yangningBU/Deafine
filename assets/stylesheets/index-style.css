@@ -1,7 +1,7 @@
 .thumb{
 	position: absolute;
-	//left:0px;
-	bottom:-50px;
+	left:0px;
+	top:-22px;
 	text-align: center;
 	width: 60px;
 	height: 50px;
@@ -11,8 +11,10 @@
 }
 .thumb-Link{
 	color: black;
+	position: absolute;
+	bottom: 5px;
 	width:100%;
-	height:100%;
+	height:auto;
 }
 .thumb-Link:hover{
 	color: rgb(100,100,100);
@@ -51,7 +53,7 @@ hr{
 	width:100%
 }
 #mainContent{
-	margin-top:100px;
+	margin-top:50px;
 }
 .modal { 
 	display: block;

@@ -4,14 +4,10 @@
 	overflow-y:scroll;
 	border: solid 1px black;
 	text-align: left;
-	//text-indent: 10px;
-	padding-top: 10px;
-	//padding-left: 30px;
 }
 #lectureResultsContainer div{
 	height: auto;
 	width: auto;
-	//border: 1px solid black;
 	display: inline-block;
 }
 #lectureResultsContainer div .vetted{
