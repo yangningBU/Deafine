@@ -1,5 +1,5 @@
-angular.module("Deafine.signin",['dialogs']);
-var SignInController = function($scope, $http, $location, $dialogs) {
+angular.module("Deafine.signin",['dialogs.main']);
+var SignInController = function($scope, $http, $location, dialogs) {
 
 	// create a blank object to hold our form information
 	// $scope will allow this to pass between controller and view
@@ -49,7 +49,7 @@ var SignInController = function($scope, $http, $location, $dialogs) {
 	};
 	
 	$scope.forgotCredentials = function(){
-		dlg = $dialogs.notify('Lost your way?','<p>Please contact our team at <a href="mailto:buaslstem@gmail.com?subject=Deafine :: Username/Password Request&body=Hello Project Deafine Team, I\'ve lost my login credentials. My name is _______________.">buaslstem@gmail.com</a> to retrieve your username or passcode.</p>');
+		dlg = dialogs.notify('Lost your way?','<p>Please contact our team at <a href="mailto:buaslstem@gmail.com?subject=Deafine :: Username/Password Request&body=Hello Project Deafine Team, I\'ve lost my login credentials. My name is _______________.">buaslstem@gmail.com</a> to retrieve your username or passcode.</p>');
 	}
 
 };

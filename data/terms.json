@@ -1,21 +1,21 @@
 [
 		{
 			"name":"Add (Horizontal)",
-			"path":"image6.gif",
+			"path":"Measure_CB_S.mov",
 			"definition":"image7.gif",
 			"example":"image8.gif",
 			"concept":"Add"
 		},
 		{
 			"name":"Add (Vertically)",
-			"path":"image5.gif",
+			"path":"Measure_CB_S.mov",
 			"definition":"image2.gif",
 			"example":"image9.gif",
 			"concept":"Add"
 		},
 		{
 			"name":"Tangent",
-			"path":"image1.gif",
+			"path":"Measure_CB_S.mov",
 			"definition":"image10.gif",
 			"example":"image11.gif",
 			"concept":"Tangent"

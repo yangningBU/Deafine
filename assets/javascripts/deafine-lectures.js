@@ -1,5 +1,5 @@
 angular.module("Deafine.lectures",["Deafine.services"])
-.controller("LecturesController",function($scope,$http,$dialogs,LectureAPIService){
+.controller("LecturesController",function($scope,$http,LectureAPIService){
 	$scope.loadingPage = 1;
 	$scope.selectedIndex = 0;
 	$scope.lectures = [];
@@ -20,26 +20,9 @@ angular.module("Deafine.lectures",["Deafine.services"])
 	
 	$scope.openLecture = function(ind){
 		$scope.updateActiveLecture(ind);
-		//dlg = $dialogs.notify('You\'ve opened a lecture!','<p>Index = '+ind+'</p>');
 		$scope.goTo("/lectures/"+ind);
 	}
 	
 	$scope.updateActiveLecture($scope.selectedIndex);
 
 });
-
-/*var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
-
-  $scope.items = items;
-  $scope.selected = {
-    item: $scope.items[0]
-  };
-
-  $scope.ok = function () {
-    $modalInstance.close($scope.selected.item);
-  };
-
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-  };
-};*/

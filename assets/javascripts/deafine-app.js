@@ -1,15 +1,15 @@
 // define angular module/app
-Deafine = angular.module('Deafine', ["ngRoute", "ngResource", "ngCookies", "ui.bootstrap", "Deafine.services", "Deafine.signin", "Deafine.topics", "Deafine.lectures", "Deafine.terms", "Deafine.join"]);
+Deafine = angular.module('Deafine', ["ngRoute", "ngResource", "ngCookies", "ui.bootstrap", 'dialogs.main','pascalprecht.translate', "Deafine.services", "Deafine.signin", "Deafine.topics", "Deafine.lectures", "Deafine.terms", "Deafine.join"]);
 
 Deafine.config(function($routeProvider,$locationProvider) { 
-    $routeProvider.when('/', {
+    /*$routeProvider.when('/', {
 	    templateUrl: 'partials/lectures.html',
 	    controller: "LecturesController"
-    });
-    /*$routeProvider.when('/', {
+    });*/
+    $routeProvider.when('/', {
         templateUrl: 'partials/signin.html', //'partials/signin.html'
         controller: "SignInController"
-    });*/
+    });
     $routeProvider.when('/join', {
         templateUrl: 'partials/join.html',
         controller: "JoinController"
@@ -47,9 +47,15 @@ Deafine.directive("brand",function($scope){ // DOESNT WORK RIGHT NOW
 	}
 });
 Deafine.controller('AppController',function($scope, $http, $location) {
-	$scope.usingEnglish = true;
+	$scope.usingEnglish = true;	
+	$scope.showingSignInPage = false;
+	$scope.navbarIsCollapsed = true;
+	
 	$scope.toggleEnglish = function(){
 		$scope.usingEnglish = !$scope.usingEnglish;
+	}
+	$scope.toggleNavbar = function(){
+		$scope.navbarIsCollapsed = !$scope.navbarIsCollapsed;
 	}
 	// Updating the View
 	$scope.goTo = function(path){
@@ -71,8 +77,6 @@ Deafine.controller('AppController',function($scope, $http, $location) {
 		totalLecturesVetted: 0,
 		totalTermsVetted: 0
 	};
-	
-	$scope.showingSignInPage = false;
-	$scope.navbarIsCollapsed = true;
+
 
 });
