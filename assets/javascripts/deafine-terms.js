@@ -12,8 +12,19 @@ angular.module("Deafine.terms",["Deafine.services"])
 		lectureIndex: parseInt($routeParams.id)
 	}
 	
-
 	$scope.terms = [];
+	$scope.config = {
+		width: '160px',
+		height: '90px',
+		autoHide: false,
+		autoHideTime: 3000,
+		autoPlay: false,
+		responsive: false,
+		transclude: true,
+		theme: {
+			url: "styles/themes/default/videogular.css"
+		}
+	}
 	$scope.showingLecture = true;
 	
 	$http.get('data/terms.json')
@@ -42,5 +53,38 @@ angular.module("Deafine.terms",["Deafine.services"])
 	$scope.showTerm = function(ind){
 		alert($scope.terms[ind].path);
 	}
+	$scope.playVideo = function(id){
+		myVid = document.getElementById(id);
+		myVid.muted = true;
+		myVid.play();
+	}
+	$scope.pauseVideo = function(id){
+		myVid = document.getElementById(id);
+		myVid.pause();
+	}
+	$scope.stopVideo = function(id){
+		myVid = document.getElementById(id);
+		myVid.pause();
+		myVid.currentTime = 0;
+	}
 
+})
+.directive('myVideo',function () {
+    return {
+        restrict: 'E',
+        require: '?ngModel',
+        replace: true,
+        transclude: true,
+        scope: {
+			src: "@",
+			height: "@",
+			width: "@",
+			hasControls:"@"
+		},
+        template: '<video width="{{width}}" height="{{height}}" volume="0" controls="{{hasControls||false}}" class="video unvetted"><source src="{{src}}"/></video>',
+        link: function (scope, element, attrs) {
+            //element.attr('src', "assets/video/signs/"+attrs.iframeSrc);
+            element.attr('type', attrs.type);
+        }
+    };
 });

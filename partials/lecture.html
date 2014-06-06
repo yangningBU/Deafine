@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-md-4 col-lg-4" id="left-div">
 				<div id="lecture"><!--ng-click="openLecture($index)"-->
-					<a class="btn btn-default" id="backButton" href="#!/lectures"><i class="fa fa-arrow-left"></i>&nbsp;<span ng-show="usingEnglish">Back to Lectures</span></a>
+					<a class="btn btn-default" id="backButton" href="#!/lectures"><span ng-show="usingEnglish"><i class="fa fa-arrow-left"></i>&nbsp;Back to Lectures</span><i ng-hide="usingEnglish" class="fa fa-arrow-left fa-2x"></i></a>
 					<div ng-click="updateToShowLecture()">
 						<h4 ng-show="usingEnglish">{{selected.lecture.name}}</h4>
 						<img class="video" ng-src="assets/images/{{selected.lecture.path}}" width="200" height="auto"/>
@@ -18,10 +18,15 @@
 					ng-hide="loadingPage"
 					>
 						<h4 ng-show="usingEnglish">{{term.name}}</h4>
-						<video class="video"width="200" height="135">
-							 <source ng-src="assets/videos/signs/{{term.path}}" type="video/mp4"/>
-						</video>
-						<p>assets/videos/signs/{{term.path}}</p>
+						<my-video src="{{'assets/videos/signs/'+term.path}}"
+						height="135px"
+						width="200px"
+						has-controls="false"
+						id="term_{{$index}}"
+						data-type="video/mp4"
+						ng-mouseover="playVideo('term_'+$index)"
+						ng-mouseleave="stopVideo('term_'+$index)"
+						>Angular and Youtube are Angry</my-video>
 					</div>
 					<div ng-show="loadingPage" class="spinnerDiv">
 						<h3 ng-show="usingEnglish">Loading Terms...</h3>
@@ -32,21 +37,35 @@
 			<div class="col-md-8 col-lg-8 main" ng-show="showingLecture">
 				<div class="row"></div>
 				<h1 ng-show="usingEnglish">{{selected.lecture.name}}</h1>
-				<img class="video" src="assets/images/{{selected.lecture.path}}" width="600" height="auto"/>
+				<my-video src="{{'assets/videos/lectures/'+selected.lecture.path}}"
+						id="active_lecture_video"
+						width="640px"
+						height="360px"
+						has-controls="true"
+						data-type="video/mp4"
+						ng-mouseover="playVideo('active_lecture_video')"
+						ng-mouseleave="pauseVideo('active_lecture_video')">
+				</my-video>
 			</div>
 			<div class="col-md-8 col-lg-8 main" ng-hide="showingLecture">
 				<div class="row"></div>
 				<h1 ng-show="usingEnglish">{{selected.term.name}}</h1>
-				<video class="video"width="600" height="338">
-					 <source ng-src="assets/videos/signs/{{selected.term.path}}" type="video/mp4"/>
-				</video>
+				<my-video src="{{'assets/videos/signs/'+selected.term.path}}"
+						id="active_term_video"
+						width="640px"
+						height="360px"
+						has-controls="false"
+						data-type="video/mp4"
+						ng-mouseover="playVideo('active_term_video')"
+						>
+				</my-video>
 				
-				<div class="row" id="carouselDiv">	
+				<div >	
 					<div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
 						<div class="carousel-inner">
-					    	<div ng-repeat="slide in terms" class="item ng-class:slide.activeClass"><!-- class of active since it's the first item -->
-					    		<div class="myLabel title"><h2>Vetting: "{{slide.eng}}"</h2></div>
-								<my-frame data-iframe-src="{{slide.youtube}}">Angular and Youtube are Angry</my-frame>
+					    	<div ng-repeat="slide in terms" class="item ng-class:slide.activeClass vetted">
+					    		<h2>Vetting: "{{slide.eng}}"</h2>
+								<video height="300"></video>
 							</div>
 						</div>
 						<a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>

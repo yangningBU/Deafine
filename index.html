@@ -23,6 +23,7 @@
     <script src="assets/javascripts/dialogs.js"></script>
 	<!-- OTHER 3RD PARTY LIBRARIES -->
 	<script src="assets/javascripts/jquery.waterwheelCarousel.js"></script>
+	<script src="assets/javascripts/videogular.js"></script>
 	<!-- CUSTOM ASSETS -->
 	<script src="assets/javascripts/deafine-app.js" type="text/javascript"></script>
 	<script src="assets/javascripts/deafine-services.js" type="text/javascript"></script>
@@ -36,16 +37,17 @@
 </head>
 <body ng-app="Deafine" ng-controller="AppController">
 	<div class="container" ng-hide="true">
-		{{"Angular is missing dependencies or the JS in the dependent files is corrupted. Check your syntax."}}
+		<h1>Whoops!</h1>
+		<!--Angular is missing dependencies or the JS in the dependent files is corrupted. Check your syntax -->
+		<p>Please check your internet connection and try again. If you continue to experience problems, please contact us <a href="mailto:buaslstem@gmail.com">here</a>.</p>
 	</div>
-	<div class="container"> <!-- ng-include="currentView.url" -->
+	<div class="container" ng-cloak> <!-- ng-include="currentView.url" -->
 		<div ng-hide="showingSignInPage">
 			<nav class="navbar navbar-default" role="navigation" collapse="navbarIsCollapsed">
 				<div class="container" >
 					<div class="row">
 						<div class="col-sm-3 brand">
 							<h1><span class="glyphicon glyphicon-dashboard"></span> {{currentUser.username || "Guest User"}}</h1>
-							<!--<span class="glyphicon glyphicon-arrow-up h1"></span>-->
 						</div>
 						<div class="col-sm-3" style="text-align:center">
 							<h5>Lectures Vetted: <span>{{currentUser.totalLecturesVetted}}</span></h5>
@@ -71,9 +73,9 @@
 					</div>
 				</div>
 			</nav>
-			<div class="col-md-1"><div class="thumb"><div class="thumb-Link" ng-click="toggleNavbar()"><i class="fa fa-dashboard fa-2x"></i></div></div></div>
+			<div class="col-md-1"><div class="thumb"><div class="thumb-Link" ng-click="toggleNavbar()"><i class="fa fa-align-justify fa-2x"></i></div></div></div>
 		</div>
-				<div class="ng-view" id="mainContent"></div>
+		<div class="ng-view" id="mainContent"></div>
 	</div> <!-- END Container Div -->
 </body>
 </html>

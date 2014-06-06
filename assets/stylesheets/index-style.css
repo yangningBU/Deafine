@@ -12,12 +12,14 @@
 .thumb-Link{
 	color: black;
 	position: absolute;
-	bottom: 5px;
+	bottom: 0px;
+	padding-bottom: 5px;
 	width:100%;
 	height:auto;
 }
 .thumb-Link:hover{
 	color: rgb(100,100,100);
+	cursor: pointer;
 }
 p{
 	opacity: 1;//.5
@@ -72,9 +74,19 @@ hr{
 .invisible{
 	visibility: hidden;
 }
+
+
 .spinnerDiv{
 	text-align: center;
 }
+.unvetted{
+	border:5px solid black;
+}
+.vetted{
+	border:5px solid green;
+}
+
+
 
 .carousel {
   position: relative;

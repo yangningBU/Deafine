@@ -1,5 +1,5 @@
 // define angular module/app
-Deafine = angular.module('Deafine', ["ngRoute", "ngResource", "ngCookies", "ui.bootstrap", 'dialogs.main','pascalprecht.translate', "Deafine.services", "Deafine.signin", "Deafine.topics", "Deafine.lectures", "Deafine.terms", "Deafine.join"]);
+Deafine = angular.module('Deafine', ["ngRoute", "ngResource", "ngCookies", "ui.bootstrap", 'dialogs.main','pascalprecht.translate',"com.2fdevs.videogular", "Deafine.services", "Deafine.signin", "Deafine.topics", "Deafine.lectures", "Deafine.terms", "Deafine.join"]);
 
 Deafine.config(function($routeProvider,$locationProvider) { 
     /*$routeProvider.when('/', {
@@ -14,12 +14,6 @@ Deafine.config(function($routeProvider,$locationProvider) {
         templateUrl: 'partials/join.html',
         controller: "JoinController"
     });
-    /*$routeProvider.when('/background', {
-        templateUrl: 'partials/backgroundcheck.html'
-    });
-    $routeProvider.when('/vet', {
-        templateUrl: 'partials/vet.html'
-    });*/
     $routeProvider.when('/home', {
 	    templateUrl: 'partials/topics.html',
 	    controller: "TopicsController"

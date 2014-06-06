@@ -1,23 +1,30 @@
 [
 		{
-			"name":"Add (Horizontal)",
+			"name":"Measure",
 			"path":"Measure_CB_S.mov",
 			"definition":"image7.gif",
 			"example":"image8.gif",
 			"concept":"Add"
 		},
 		{
-			"name":"Add (Vertically)",
-			"path":"Measure_CB_S.mov",
+			"name":"Analyze",
+			"path":"Analyze_BS_S.mov",
 			"definition":"image2.gif",
 			"example":"image9.gif",
 			"concept":"Add"
 		},
 		{
-			"name":"Tangent",
-			"path":"Measure_CB_S.mov",
+			"name":"Goal",
+			"path":"Goal_BS_S.mov",
 			"definition":"image10.gif",
 			"example":"image11.gif",
 			"concept":"Tangent"
-		}
+		},
+		{"name":"Graduated Cylinder","path":"Graduated Cylinder_CB_S.mov"},
+		{"name":"Hypothesis","path":"Hypothesis_CB_S.mov"},
+		{"name":"Independent Variable","path":"Independent Variable_CB_S.mov"},
+		{"name":"Label","path":"Label_CB_S.mov"},
+		{"name":"Magnify/Zoom","path":"Magnify-Zoom_CB_S.mov"},
+		{"name":"Materials (Matter)","path":"Materials-matter_BS_S.mov"},
+		{"name":"Materials (Thing)","path":"Materials-thing_CB_S.mov"}
 ]

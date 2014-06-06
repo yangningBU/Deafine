@@ -26,7 +26,6 @@
 	height: 400px;
 }
 .term .video{
-	border: 5px solid black;
 	margin: 10px;
 }
 .term .video:hover{
@@ -48,6 +47,6 @@
 	vertical-align: middle;
 }
 label{
-	padding: 15px;
+	padding: 5px;
 	text-align: center;
 }*/
