@@ -42,8 +42,8 @@ Deafine.directive("brand",function($scope){ // DOESNT WORK RIGHT NOW
 });
 Deafine.controller('AppController',function($scope, $http, $location) {
 	$scope.usingEnglish = true;	
-	$scope.showingSignInPage = false;
-	$scope.navbarIsCollapsed = false;
+	$scope.showingSignInPage = true;
+	$scope.navbarIsCollapsed = true;
 	
 	$scope.toggleEnglish = function(){
 		$scope.usingEnglish = !$scope.usingEnglish;
