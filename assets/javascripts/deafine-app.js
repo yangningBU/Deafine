@@ -1,5 +1,5 @@
 // define angular module/app
-Deafine = angular.module('Deafine', ["ngRoute", "ngResource", "ngCookies", "ui.bootstrap", 'dialogs.main','pascalprecht.translate',"com.2fdevs.videogular", "Deafine.services", "Deafine.signin", "Deafine.topics", "Deafine.lectures", "Deafine.terms", "Deafine.join"]);
+Deafine = angular.module('Deafine', ["ngRoute", "ngResource", "ngCookies", "ui.bootstrap", 'dialogs.main','pascalprecht.translate', "Deafine.services", "Deafine.directives", "Deafine.signin", "Deafine.topics", "Deafine.lectures", "Deafine.terms", "Deafine.join"]);
 
 Deafine.config(function($routeProvider,$locationProvider) { 
     /*$routeProvider.when('/', {

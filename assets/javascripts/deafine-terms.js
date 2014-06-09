@@ -68,23 +68,4 @@ angular.module("Deafine.terms",["Deafine.services"])
 		myVid.currentTime = 0;
 	}
 
-})
-.directive('myVideo',function () {
-    return {
-        restrict: 'E',
-        require: '?ngModel',
-        replace: true,
-        transclude: true,
-        scope: {
-			src: "@",
-			height: "@",
-			width: "@",
-			hasControls:"@"
-		},
-        template: '<video width="{{width}}" height="{{height}}" volume="0" controls="{{hasControls||false}}" class="video unvetted"><source src="{{src}}"/></video>',
-        link: function (scope, element, attrs) {
-            //element.attr('src', "assets/video/signs/"+attrs.iframeSrc);
-            element.attr('type', attrs.type);
-        }
-    };
 });

@@ -21,7 +21,6 @@
 						<my-video src="{{'assets/videos/signs/'+term.path}}"
 						height="135px"
 						width="200px"
-						has-controls="false"
 						id="term_{{$index}}"
 						data-type="video/mp4"
 						ng-mouseover="playVideo('term_'+$index)"
@@ -41,7 +40,7 @@
 						id="active_lecture_video"
 						width="640px"
 						height="360px"
-						has-controls="true"
+						controls="true"
 						data-type="video/mp4"
 						ng-mouseover="playVideo('active_lecture_video')"
 						ng-mouseleave="pauseVideo('active_lecture_video')">
@@ -54,7 +53,7 @@
 						id="active_term_video"
 						width="640px"
 						height="360px"
-						has-controls="false"
+						controls="true"
 						data-type="video/mp4"
 						ng-mouseover="playVideo('active_term_video')"
 						>
