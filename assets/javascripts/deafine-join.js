@@ -1,8 +1,7 @@
 angular.module("Deafine.join",[])
 .controller('JoinController',function($scope, $http, $location) {
 
-	// create a blank object to hold our form information
-	// $scope will allow this to pass between controller and view
+
 	$scope.attemptedUser = {};
 	$scope.attemptedUser.email = "";
 	$scope.attemptedUser.code = "";
@@ -24,7 +23,8 @@ angular.module("Deafine.join",[])
 	$scope.attemptedUser.code = "";
 	
 	
-	// Verify IRB
+	// Verify IRB 	
+	// doesn't work (not tested)
 	$scope.validateIRB = function(){
 		/*if($scope.attemptedUser.IRBcode.toUpperCase() === "CODE"){
 			$scope.goTo("/background");

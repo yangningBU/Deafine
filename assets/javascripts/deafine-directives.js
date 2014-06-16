@@ -2,7 +2,7 @@ angular.module("Deafine.directives",[])
 .directive('myVideo',function () {
     return {
         restrict: 'E',
-        require: '?ngModel',
+        //require: '?ngModel',
         replace: true,
         transclude: true,
         scope: {

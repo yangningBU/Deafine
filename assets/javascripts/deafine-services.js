@@ -1,5 +1,7 @@
 angular.module('Deafine.services', [])
 
+// Don't remember the difference between .factory and .service
+// This is supposed to connect to the back-end, ie API calls happen here.
 .service("LectureAPIService",function($http,$q){	
 	
 	var lectures = [];
@@ -37,6 +39,9 @@ angular.module('Deafine.services', [])
 			return activeTerm;
 		}
     }
+    
+    // the functions below didn't work, so you need to research connecting with $http
+    
 	/*
 	function getLectures() {
 		alert('trying to get lectures');

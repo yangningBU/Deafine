@@ -1,5 +1,7 @@
 // define angular module/app
-Deafine = angular.module('Deafine', ["ngRoute", "ngResource", "ngCookies", "ui.bootstrap", 'dialogs.main','pascalprecht.translate', "Deafine.services", "Deafine.directives", "Deafine.signin", "Deafine.topics", "Deafine.lectures", "Deafine.terms", "Deafine.join"]);
+Deafine = angular.module('Deafine', ["ngRoute", "ui.bootstrap", 'dialogs.main','pascalprecht.translate', "Deafine.services", "Deafine.directives", "Deafine.signin", "Deafine.lectures", "Deafine.terms", "Deafine.join"]);
+// 'pascalprecht.translate' is for the 'dialogs.main' module that I got off the web.
+// These are for the popup module shown in the 'Forgot Username' link on the sign-in page
 
 Deafine.config(function($routeProvider,$locationProvider) { 
     /*$routeProvider.when('/', {
@@ -29,16 +31,9 @@ Deafine.config(function($routeProvider,$locationProvider) {
     $routeProvider.otherwise({
         redirectTo: "/lectures"
     });
-    $locationProvider.html5Mode(false);
-    $locationProvider.hashPrefix('!');
+    $locationProvider.html5Mode(false); // don't remember what this is for
+    $locationProvider.hashPrefix('!'); //optional, keeping the .index.html/#!
     
-});
-Deafine.directive("brand",function($scope){ // DOESNT WORK RIGHT NOW
-	return{
-		restrict: "E",
-		//transclude: true,
-		template: '<div class="page-footer brand"><h3><span class="glyphicon glyphicon-book"></span> Project&nbsp;Deafine</h3></div>'
-	}
 });
 Deafine.controller('AppController',function($scope, $http, $location) {
 	$scope.usingEnglish = true;	
@@ -62,6 +57,7 @@ Deafine.controller('AppController',function($scope, $http, $location) {
 		$location.path(path);
 	};
 	
+	// I started to create a session user but didn't get very far. Right now I'm using the .username between views
 	$scope.currentUser = {
 		isSignedIn : false,
 		email: null,

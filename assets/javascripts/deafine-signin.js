@@ -33,21 +33,8 @@ var SignInController = function($scope, $http, $location, dialogs) {
 			//alert("why no work?");
 		}
 	};
-	$scope.newuser = function(){
-		$http({
-		        method  : 'GET',
-		        url     : 'join.html',
-		        //data    : $.param($scope.formData),  // pass in data as strings
-		        headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  
-		        // set the headers so angular passing info as form data (not request payload)
-		})
-        .success(function(data) {
-            console.log(data);
-			$('#mainContent').html(data);
-			
-		});
-	};
 	
+	// The popup/modal 
 	$scope.forgotCredentials = function(){
 		dlg = dialogs.notify('Lost your way?','<p>Please contact our team at <a href="mailto:buaslstem@gmail.com?subject=Deafine :: Username/Password Request&body=Hello Project Deafine Team, I\'ve lost my login credentials. My name is _______________.">buaslstem@gmail.com</a> to retrieve your username or passcode.</p>');
 	}
